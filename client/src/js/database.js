@@ -15,7 +15,7 @@ const initdb = async () =>
 // a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
   // connect to the databse and choose version 1
-  const jatedb = await openDB('jate, 1');
+  const jatedb = await openDB('jate', 1);
   // creates a new transaction specifying the database and data priveledges
   const tx = jatedb.transaction('jate', 'readwrite');
   // open up the desired object store
@@ -28,15 +28,15 @@ export const putDb = async (content) => {
 };
 
 // a method that gets all the content from the database
-export const getDb = async (content) => {
+export const getDb = async () => {
   // connect to the databse and choose version 1
-  const jatedb = await openDB('jate, 1');
+  const jatedb = await openDB('jate', 1);
   // creates a new transaction specifying the database and data priveledges
   const tx = jatedb.transaction('jate', 'readonly');
   // open up the desired object store
   const store = tx.objectStore('jate');
   // use the get method to get the content
-  const request = store.get(content);
+  const request = store.get(1);
   // get confirmation of the request
   const result = await request;
   console.log(result);
