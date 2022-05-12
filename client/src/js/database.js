@@ -21,7 +21,7 @@ export const putDb = async (content) => {
   // open up the desired object store
   const store = tx.objectStore('jate');
   // use the put method to edit the content
-  const request = store.put({ jate: content });
+  const request = store.put({ id: 1, value: content });
   // get confirmation of the request
   const result = await request;
   console.log('Data saved to the database successfully', result);
@@ -35,11 +35,12 @@ export const getDb = async () => {
   const tx = jateDb.transaction('jate', 'readonly');
   // open up the desired object store
   const store = tx.objectStore('jate');
-  // use the get method to get all of the content
-  const request = store.getAll();
+  // use the get method to get the content
+  const request = store.get(1);
   // get confirmation of the request
   const result = await request;
   console.log(result);
+  return result?.value;
 };
 
 initdb();
