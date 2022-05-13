@@ -28,7 +28,7 @@ export const putDb = async (content) => {
 };
 
 // a method that gets all the content from the database
-export const getDb = async () => {
+export const getDb = async (content) => {
   // connect to the databse and choose version 1
   const jateDB = await openDB('jate', 1);
   // creates a new transaction specifying the database and data priveledges
@@ -36,7 +36,7 @@ export const getDb = async () => {
   // open up the desired object store
   const store = tx.objectStore('jate');
   // use the get method to get the content
-  const request = store.get();
+  const request = store.get(content);
   // get confirmation of the request
   const result = await request;
   console.log(result);
