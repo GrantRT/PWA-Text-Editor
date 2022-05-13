@@ -23,5 +23,7 @@ The application is hosted on Heroku: https://just-another-text-editor-gt.herokua
 ## Screenshots
 
 In browser:
+![image](https://user-images.githubusercontent.com/93350224/168260777-ca213a08-1683-40e2-a456-68a9e5d9d0b0.png)
 
 In application:
+![image](https://user-images.githubusercontent.com/93350224/168260919-b8bf38e6-6daf-4038-b3c6-928596002cbb.png)
